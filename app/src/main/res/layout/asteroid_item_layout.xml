@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="asteroid"
+            type="com.example.asteroidapp.dataBase.AsteroidData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guide_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guide_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <TextView
+            android:id="@+id/asteroid_name_view"
+            style="@style/Asteroid.Details.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/asteroid_name_text_description"
+            android:text="@{asteroid.asteroidName}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/asteroid_name_color"
+            app:layout_constraintEnd_toStartOf="@+id/asteroid_type_image_view"
+            app:layout_constraintStart_toStartOf="@id/start_guide_line"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="(2021 KB67)" />
+
+        <TextView
+            android:id="@+id/asteroid_date_view"
+            style="@style/Asteroid.Details.SubTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="20dp"
+            android:text="@{asteroid.closeApproachDate}"
+            android:textColor="@color/grey"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/asteroid_type_image_view"
+            app:layout_constraintStart_toStartOf="@+id/asteroid_name_view"
+            app:layout_constraintTop_toBottomOf="@+id/asteroid_name_view"
+            tools:text="2020-02-08"
+            android:contentDescription="@string/asteroid_approach_date_description"/>
+
+        <ImageView
+            android:id="@+id/asteroid_type_image_view"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:tint="@color/image_hazardous_icon_color"
+            app:AsteroidTypeSetter="@{asteroid.checkHazardous}"
+            app:layout_constraintBottom_toBottomOf="@+id/asteroid_date_view"
+            app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+            app:layout_constraintTop_toTopOf="@+id/asteroid_name_view"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

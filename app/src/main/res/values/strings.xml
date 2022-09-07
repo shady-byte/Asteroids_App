@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">AsteroidApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="asteroid_list_fragment_label">Asteroids Radar</string>
+    <string name="asteroid_details_fragment_label">Asteroid Details</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="today_image_description">image of the day from nasa about space</string>
+    <string name="asteroid_list_description">list of asteroids which are near the earth for 7 days</string>
+    <string name="title_image_of_the_day">Image of the day</string>
+    <string name="asteroid_type_description">Image of asteroid type if hazardous or not</string>
+    <string name="close_approach_date">Close approach date</string>
+    <string name="absolute_magnitude">Absolute magnitude</string>
+    <string name="estimated_diameter">Estimated diameter</string>
+    <string name="relative_velocity">Relative velocity</string>
+    <string name="distance_from_earth">Distance from earth</string>
+    <string name="help_circle_description">an icon that describes what is the meaning of measuring unit au</string>
+    <string name="help_circle_dialog_text">The astronomical unit (au) is a unit of length, roughly the distance from Earth to the Sun and equal to about 150 million kilometers (93 million miles)</string>
+    <string name="aceptar">Accept</string>
+    <string name="main_fragment_description">it is screen which displays list of asteroid near earth for 7 days</string>
+    <string name="asteroid_name_text_description">asteroid name</string>
+    <string name="asteroid_approach_date_description">asteroid approach date</string>
+    <string name="close_approach_date_description">close approach date of asteroid</string>
+    <string name="absolute_magnitude_description">absolute magnitude of asteroid</string>
+    <string name="estimated_diameter_description">estimated diameter of asteroid</string>
+    <string name="relative_velocity_description">relative velocity of asteroid</string>
+    <string name="distance_from_earth_description">distance from earth of asteroid</string>
+    <string name="all_items">All Items</string>
+    <string name="filter_items">Filter Today Items</string>
+    <string name="notification_title">Egg Timer</string>
+
+    <string name="fcm_message">FCM Message</string>
+    <string name="message_subscribe_failed">Failed to subscribe to topic</string>
+    <string name="message_subscribed">Subscribed to topic</string>
+    <string name="egg_notification_channel_id" translatable="false">egg_channel</string>
+    <string name="egg_notification_channel_name" translatable="true">Egg</string>
+    <string name="breakfast_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="breakfast_notification_channel_name" translatable="true">Breakfast</string>
+    <string name="eggs_ready">It is time! Bon appetit!</string>
+    <string name="timer_running">Egg timer is running...</string>
+    <string name="breakfast_notification_channel_description">Breakfast reminder</string>
+    <string name="snooze">Snooze</string>
+
+</resources>

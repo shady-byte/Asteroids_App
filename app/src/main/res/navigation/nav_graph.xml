@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/asteroidsDataListFragment">
+    <fragment
+        android:id="@+id/asteroidsDataListFragment"
+        android:name="com.example.asteroidapp.ui.AsteroidsDataListFragment"
+        android:label="@string/asteroid_list_fragment_label">
+        <action
+            android:id="@+id/action_asteroidsDataListFragment_to_asteroidDetailsFragment"
+            app:destination="@id/asteroidDetailsFragment"
+            app:popUpTo="@id/asteroidsDataListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/asteroidDetailsFragment"
+        android:name="com.example.asteroidapp.ui.AsteroidDetailsFragment"
+        android:label="@string/asteroid_details_fragment_label">
+        <argument
+            android:name="asteroidSelected"
+            app:argType="com.example.asteroidapp.dataBase.AsteroidData"/>
+    </fragment>
+</navigation>

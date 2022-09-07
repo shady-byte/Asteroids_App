@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.asteroidapp.viewModels.AsteroidDetailsViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/asteroid_hazardous_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                AsteroidHazardousSetter="@{viewModel.selectedAsteroid.checkHazardous}" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/start_guide_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/end_guide_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="20dp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/Asteroid.Details.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/close_approach_date_description"
+                    android:text="@string/close_approach_date"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/asteroid_details_text_color"
+                    app:layout_constraintEnd_toStartOf="@+id/end_guide_line"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide_line"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/approach_date_text"
+                    style="@style/Asteroid.Details.SubTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:contentDescription="@string/close_approach_date_description"
+                    android:text="@{viewModel.selectedAsteroid.closeApproachDate}"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toStartOf="@+id/end_guide_line"
+                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5"
+                    tools:text="2020-02-08" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/Asteroid.Details.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="@string/absolute_magnitude_description"
+                    android:text="@string/absolute_magnitude"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/asteroid_details_text_color"
+                    app:layout_constraintEnd_toStartOf="@+id/help_circle_image"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide_line"
+                    app:layout_constraintTop_toBottomOf="@+id/approach_date_text" />
+
+                <TextView
+                    android:id="@+id/magnitude_text"
+                    style="@style/Asteroid.Details.SubTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="@string/absolute_magnitude_description"
+                    android:text="@{viewModel.displayAbsoluteMagnitude}"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toStartOf="@+id/help_circle_image"
+                    app:layout_constraintStart_toStartOf="@+id/textView7"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7"
+                    tools:text="19.90000000 au" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    style="@style/Asteroid.Details.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:contentDescription="@string/estimated_diameter_description"
+                    android:text="@string/estimated_diameter"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/asteroid_details_text_color"
+                    app:layout_constraintEnd_toStartOf="@+id/end_guide_line"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide_line"
+                    app:layout_constraintTop_toBottomOf="@+id/magnitude_text" />
+
+                <TextView
+                    android:id="@+id/diameter_text"
+                    style="@style/Asteroid.Details.SubTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:contentDescription="@string/estimated_diameter_description"
+                    android:text="@{viewModel.displayEstimatedDiameter}"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toStartOf="@+id/end_guide_line"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                    tools:text="0.76353553 km" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    style="@style/Asteroid.Details.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:contentDescription="@string/relative_velocity_description"
+                    android:text="@string/relative_velocity"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/asteroid_details_text_color"
+                    app:layout_constraintEnd_toStartOf="@+id/end_guide_line"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide_line"
+                    app:layout_constraintTop_toBottomOf="@+id/diameter_text" />
+
+                <TextView
+                    android:id="@+id/velocity_text"
+                    style="@style/Asteroid.Details.SubTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:contentDescription="@string/relative_velocity_description"
+                    android:text="@{viewModel.displayRelativeVelocity}"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toStartOf="@+id/end_guide_line"
+                    app:layout_constraintStart_toStartOf="@+id/textView11"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11"
+                    tools:text="15.67773343 km/s" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    style="@style/Asteroid.Details.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:contentDescription="@string/distance_from_earth_description"
+                    android:text="@string/distance_from_earth"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/asteroid_details_text_color"
+                    app:layout_constraintEnd_toStartOf="@+id/end_guide_line"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide_line"
+                    app:layout_constraintTop_toBottomOf="@+id/velocity_text" />
+
+                <TextView
+                    android:id="@+id/distance_text"
+                    style="@style/Asteroid.Details.SubTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:contentDescription="@string/distance_from_earth_description"
+                    android:text="@{viewModel.displayDistanceFromEarth}"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView13"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13"
+                    tools:text="0.4456671 au" />
+
+                <ImageView
+                    android:id="@+id/help_circle_image"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/magnitude_text"
+                    app:layout_constraintEnd_toStartOf="@+id/end_guide_line"
+                    app:layout_constraintTop_toTopOf="@+id/textView7"
+                    app:srcCompat="@drawable/help_circle"
+                    android:contentDescription="@string/help_circle_description"
+                    app:tint="@color/circle_help_color" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
