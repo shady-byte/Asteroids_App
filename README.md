@@ -5,7 +5,11 @@ an app that connects to Nasa Api and display data about asteroids which are clos
 -Retrofit <br>
 -Glide <br>
 -Databinding <br>
--navigation graphs <br><br>
+-MVVM Model <br>
+-Coroutines <br>
+-Supports multilanguages <br>
+-Dark & Light Moods <br>
+-Navigation graphs <br><br>
 
 <b>Screenshots from the application</b>
 
