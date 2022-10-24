@@ -18,5 +18,6 @@ an app that connects to Nasa Api and display data about asteroids which are clos
     <td><img src="https://user-images.githubusercontent.com/76439620/188920953-dd5e79cb-6b2e-4edf-acd0-0b4434f26c48.PNG" width=223 height=450></td>
     <td><img src="https://user-images.githubusercontent.com/76439620/188921125-e36056f3-6747-424f-a35f-f55c72c5dba3.PNG" width=223 height=450></td>
   </tr>
+ </table>
   
  
